@@ -6,17 +6,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import {Form, Row, Button, Col} from "react-bootstrap";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import httpRequest from '../src/httpRequest' // to get api response
+
 const Main = () => {
 
   const [operation, setOperation] = useState(); 
   const [form, setForm] = useState();
-
   function selectOperation(e) { 
     setOperation(e.target.name)
   } 
 
   function selectForm(e){
     setForm(e.target.name)
+    httpRequest.get('http://localhost:4000/')
+      .then(res => {
+        console.log(res.data)
+      })
   }
 
   return (
@@ -57,7 +62,7 @@ const Main = () => {
       {operation== "Delete" && form == "Customer" &&  <DeleteCustomerForm/>}
 
       
-
+      
 
       
       </div>
