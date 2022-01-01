@@ -15,11 +15,11 @@ const InsertTaxiForm = (props) => {
   function fetchData() {
     const port = 'http://localhost:4000/api/taxi/create'
 
-    axios.post(port).then(res =>{
-      let  taxis = res.data.rows;
+    axios.post(port,data).then(res =>{
+      console.log(res.data)
 
     })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err.message))
   }
 
   return (

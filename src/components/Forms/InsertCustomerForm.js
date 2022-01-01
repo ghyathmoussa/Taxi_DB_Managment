@@ -19,12 +19,12 @@ const InsertCustomerForm = (props) =>  {
           </Form.Group>
         </Row>
 
-        <Row className="mb-3">
+        {/* <Row className="mb-3">
           <Form.Group as={Col}>
             <Form.Label>ID</Form.Label>
             <Form.Control placeholder="ID"/>
           </Form.Group>
-        </Row>
+        </Row> */}
 
         <Button variant="primary" type="submit">
           Submit
